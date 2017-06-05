@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<properties resource="mybatis-config.properties" />
+	<settings>
+		<setting name="cacheEnabled" value="true" />
+	</settings>
+	<typeHandlers>
+		<!-- 用于实现枚举和行政区划级别的映射 -->
+		<typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
+			javaType="cn.aposoft.administrativedivision.DivisionLevel" />
+	</typeHandlers>
+	<environments default="${default.environment}">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}" />
+				<property name="url" value="${jdbc.url}" />
+				<property name="username" value="${jdbc.username}" />
+				<property name="password" value="${jdbc.password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="mybatis/FullStudentMapper.xml" />
+	</mappers>
+</configuration>

@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
-	<context id="context1">
+	<classPathEntry
+		location="D:/m2_repos/repository/mysql/mysql-connector-java/5.1.42/mysql-connector-java-5.1.42.jar" />
+
+	<context id="administrative_division">
+
 		<jdbcConnection
 			connectionURL="jdbc:mysql://localhost:3306/administrative_division?useSSL=false&amp;useUnicode=true&amp;characterEncoding=UTF-8&amp;autoReconnect=true&amp;failOverReadOnly=false"
 			driverClass="com.mysql.jdbc.Driver" password="pass"
 			userId="administrative_division" />
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
 		<javaModelGenerator targetPackage="cn.aposoft.administrativedivision.db"
 			targetProject="aposoft-administrative-division-management" />
 		<sqlMapGenerator targetPackage="mybatis"
@@ -19,7 +26,7 @@
 		<table domainObjectName="DivisionYearlyHistory" schema="administrative_division"
 			tableName="division_yearly_history">
 		</table>
-				<table domainObjectName="DivisionYearlyDetail" schema="administrative_division"
+		<table domainObjectName="DivisionYearlyDetail" schema="administrative_division"
 			tableName="division_yearly_detail">
 		</table>
 	</context>

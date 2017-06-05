@@ -11,7 +11,7 @@
     <result column="code" jdbcType="VARCHAR" property="code" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="parent" jdbcType="VARCHAR" property="parent" />
-    <result column="division_level" jdbcType="BIT" property="divisionLevel" />
+    <result column="division_level" jdbcType="INTEGER" property="divisionLevel" />
     <result column="establish_date" jdbcType="DATE" property="establishDate" />
     <result column="version" jdbcType="INTEGER" property="version" />
   </resultMap>
