@@ -163,6 +163,12 @@ public class AdministrativeDivisionBusinessImplTest {
 		}
 	}
 
+	/**
+	 * 验证记录项
+	 * 
+	 * @param item
+	 *            记录项
+	 */
 	private void validateItem(AdministrativeDivisionContent item) {
 		assertNotNull(item);
 		assertNotNull(item.getTitle());
