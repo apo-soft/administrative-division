@@ -15,10 +15,7 @@ import java.util.List;
  */
 public class AdministrativeDivisionContent implements Serializable {
 	private static final long serialVersionUID = 458294241183694884L;
-	/**
-	 * 统计列表页URL
-	 */
-	private String refUrl;
+
 	/**
 	 * 区划明细发布URL
 	 */
@@ -36,16 +33,12 @@ public class AdministrativeDivisionContent implements Serializable {
 	 * 截止日期
 	 */
 	private Date finalDate;
+	/**
+	 * 标题
+	 */
+	private String title;
 
-	private List<AdministrativeDivisionKeyValuePair> divisions;
-
-	public String getRefUrl() {
-		return refUrl;
-	}
-
-	public void setRefUrl(String refUrl) {
-		this.refUrl = refUrl;
-	}
+	private List<AdministrativeDivision> divisions;
 
 	public String getUrl() {
 		return url;
@@ -63,11 +56,11 @@ public class AdministrativeDivisionContent implements Serializable {
 		this.finalDate = finalDate;
 	}
 
-	public List<AdministrativeDivisionKeyValuePair> getDivisions() {
+	public List<AdministrativeDivision> getDivisions() {
 		return divisions;
 	}
 
-	public void setDivisions(List<AdministrativeDivisionKeyValuePair> divisions) {
+	public void setDivisions(List<AdministrativeDivision> divisions) {
 		this.divisions = divisions;
 	}
 
@@ -99,6 +92,14 @@ public class AdministrativeDivisionContent implements Serializable {
 	 */
 	public void setSource(String source) {
 		this.source = source;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
 }

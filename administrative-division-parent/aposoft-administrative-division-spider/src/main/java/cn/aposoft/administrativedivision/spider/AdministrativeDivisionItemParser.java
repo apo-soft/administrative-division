@@ -11,6 +11,7 @@ package cn.aposoft.administrativedivision.spider;
  */
 public interface AdministrativeDivisionItemParser {
 
-	AdministrativeDivisionContent parse(String itemContentHtml, String itemContentUrl);
+	AdministrativeDivisionContent parse(String itemContentHtml, String itemContentUrl)
+			throws AdministrativeDivisionBusinessException;
 
 }

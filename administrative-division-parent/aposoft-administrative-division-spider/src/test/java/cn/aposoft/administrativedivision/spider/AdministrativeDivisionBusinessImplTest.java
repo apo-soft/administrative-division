@@ -3,8 +3,13 @@
  */
 package cn.aposoft.administrativedivision.spider;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.junit.Test;
 
 import com.alibaba.fastjson.JSON;
@@ -146,8 +151,39 @@ public class AdministrativeDivisionBusinessImplTest {
 	public void testGetItemContent() throws AdministrativeDivisionBusinessException {
 		try (AdministrativeDivisionBusiness service = new AdministrativeDivisionBusinessImpl()) {
 			AdministrativeDivisionContent item = service.getContent(UrlConstant.ITEM_CONTENT_URL);
-//			System.out.println(JSON.toJSONStringWithDateFormat(item, "yyyy-MM-dd",
-//					new SerializerFeature[] { SerializerFeature.PrettyFormat }));
+			validateItem(item);
 		}
 	}
+
+	@Test
+	public void testGetLatestItemContent() throws AdministrativeDivisionBusinessException {
+		try (AdministrativeDivisionBusiness service = new AdministrativeDivisionBusinessImpl()) {
+			AdministrativeDivisionContent item = service.getLatestContent(service.getDefaultListPageUrl());
+			validateItem(item);
+		}
+	}
+
+	private void validateItem(AdministrativeDivisionContent item) {
+		assertNotNull(item);
+		assertNotNull(item.getTitle());
+		assertNotNull(item.getSource());
+		assertNotNull(item.getFinalDate());
+		assertNotNull(item.getPublishTime());
+		assertNotNull(item.getUrl());
+		// System.out.println(JSON.toJSONStringWithDateFormat(item, "yyyy-MM-dd
+		// HH:mm:ss",
+		// new SerializerFeature[] { SerializerFeature.PrettyFormat }));
+		validateKeyValue(item.getDivisions());
+	}
+
+	private void validateKeyValue(List<AdministrativeDivision> divisions) {
+		assertNotNull(divisions);
+		assertEquals(3508, divisions.size());
+		for (AdministrativeDivision division : divisions) {
+			assertNotNull(division);
+			assertTrue(StringUtils.isNotBlank(division.getCode()));
+			assertTrue(StringUtils.isNotBlank(division.getName()));
+		}
+	}
+
 }

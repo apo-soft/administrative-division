@@ -4,7 +4,6 @@
 package cn.aposoft.administrativedivision.spider;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -27,12 +26,6 @@ import org.slf4j.LoggerFactory;
  */
 public class AdministrativeDivisionListPageParserImpl implements AdministrativeDivisionListPageParser {
 	static final Logger logger = LoggerFactory.getLogger(AdministrativeDivisionListPageParserImpl.class);
-
-	static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-	static final SimpleDateFormat chineseDateFormat = new SimpleDateFormat("yyyy'年'MM'月'dd'日'");
-	static final String DATE_PATTERN = "\\d{4}-\\d{2}-\\d{2}";
-	static final String CHINESE_DATE_PATTERN_FORMAT = "\\d{4}[\u4e00-\u9fa5]{1}\\d{2}[\u4e00-\u9fa5]{1}\\d{2}[\u4e00-\u9fa5]{1}";
-	static final Pattern CHINESE_DATE_PATTERN = Pattern.compile(CHINESE_DATE_PATTERN_FORMAT);
 
 	public List<AdministrativeDivisionListItem> parse(final String html, final String baseUrl)
 			throws AdministrativeDivisionBusinessException {
@@ -322,14 +315,14 @@ public class AdministrativeDivisionListPageParserImpl implements AdministrativeD
 						StringBuilder builder = new StringBuilder();
 						builder = font.html(builder);
 						String text = builder.toString().trim();
-						if (Pattern.matches(DATE_PATTERN, text)) {
-							item.setPublishTime(dateFormat.parse(text));
+						if (Pattern.matches(DateUtil.DATE_PATTERN, text)) {
+							item.setPublishTime(DateUtil.parsePublishDate(text));
 						} else {
-							Matcher matcher = CHINESE_DATE_PATTERN.matcher(text);
+							Matcher matcher = DateUtil.CHINESE_DATE_PATTERN.matcher(text);
 
 							if (matcher.find()) {
 								String finalDateStr = matcher.group(0);
-								Date finalDate = chineseDateFormat.parse(finalDateStr);
+								Date finalDate = DateUtil.parseChineseDate(finalDateStr);
 								item.setFinalDate(finalDate);
 							}
 							item.setTitle(text);

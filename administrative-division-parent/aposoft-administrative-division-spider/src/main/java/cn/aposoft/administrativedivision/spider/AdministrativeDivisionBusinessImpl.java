@@ -6,6 +6,7 @@ package cn.aposoft.administrativedivision.spider;
 import java.io.Closeable;
 import java.util.List;
 
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -17,6 +18,8 @@ import org.slf4j.LoggerFactory;
  */
 public class AdministrativeDivisionBusinessImpl implements AdministrativeDivisionBusiness, Closeable {
 	static final Logger logger = LoggerFactory.getLogger(AdministrativeDivisionBusinessImpl.class);
+	final static String DEFAULT_LIST_PAGE_URL = "http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/";
+
 	final HtmlPageClient client = new HtmlPageClient();
 	private AdministrativeDivisionItemParser itemContentParser = new AdministrativeDivisionItemParserImpl();
 
@@ -39,7 +42,6 @@ public class AdministrativeDivisionBusinessImpl implements AdministrativeDivisio
 			throws AdministrativeDivisionBusinessException {
 		try {
 			String listPageHtml = client.getPageContent(listPageUrl);
-			// logger.info(listPageHtml);
 			return listPageParser.parse(listPageHtml, listPageUrl);
 		} catch (RemoteException e) {
 			throw new AdministrativeDivisionBusinessException(e);
@@ -58,7 +60,6 @@ public class AdministrativeDivisionBusinessImpl implements AdministrativeDivisio
 			throws AdministrativeDivisionBusinessException {
 		try {
 			String itemContentHtml = client.getPageContent(itemContentUrl);
-			System.out.println(itemContentHtml);
 			return itemContentParser.parse(itemContentHtml, itemContentUrl);
 		} catch (RemoteException e) {
 			throw new AdministrativeDivisionBusinessException(e);
@@ -66,4 +67,24 @@ public class AdministrativeDivisionBusinessImpl implements AdministrativeDivisio
 
 	}
 
+	/**
+	 * 根据列表页地址,抓取最新的行政区划报表
+	 * 
+	 * @param listPageUrl
+	 *            列表页地址
+	 */
+	@Override
+	public AdministrativeDivisionContent getLatestContent(String listPageUrl)
+			throws AdministrativeDivisionBusinessException {
+		List<AdministrativeDivisionListItem> items = getContentUrl(listPageUrl);
+		if (items != null && !items.isEmpty() && !StringUtils.isEmpty(items.get(0).getContentUrl())) {
+			return getContent(items.get(0).getContentUrl());
+		}
+		throw new AdministrativeDivisionBusinessException("can not fetch the list,because of some unknown error.");
+	}
+
+	@Override
+	public String getDefaultListPageUrl() {
+		return DEFAULT_LIST_PAGE_URL;
+	}
 }

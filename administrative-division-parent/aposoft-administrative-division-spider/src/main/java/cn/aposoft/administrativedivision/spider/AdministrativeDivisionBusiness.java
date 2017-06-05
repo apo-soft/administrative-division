@@ -16,6 +16,8 @@ import java.util.List;
  */
 public interface AdministrativeDivisionBusiness extends Closeable {
 
+	String getDefaultListPageUrl();
+
 	/**
 	 * 判定是否存在新的统计文件
 	 * 
@@ -35,6 +37,16 @@ public interface AdministrativeDivisionBusiness extends Closeable {
 	 * @return 行政区划详情解析结果
 	 */
 	AdministrativeDivisionContent getContent(String url) throws AdministrativeDivisionBusinessException;
+
+	/**
+	 * 根据列表页地址最新版本的行政区划统计表
+	 * 
+	 * @param listPageUrl
+	 *            列表页最新地址
+	 * @return 最新版本的行政区划统计表
+	 * @throws AdministrativeDivisionBusinessException
+	 */
+	AdministrativeDivisionContent getLatestContent(String listPageUrl) throws AdministrativeDivisionBusinessException;
 
 	@Override
 	public void close();
