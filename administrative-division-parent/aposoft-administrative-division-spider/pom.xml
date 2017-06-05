@@ -4,11 +4,10 @@
 	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>cn.aposoft.common</groupId>
+		<groupId>cn.aposoft.administrative-division</groupId>
 		<artifactId>administrative-division-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<groupId>cn.aposoft.administrativedivision</groupId>
 	<artifactId>aposoft-administrative-division-spider</artifactId>
 	<name>aposoft-administrative-division-spider</name>
 	<url>http://maven.apache.org</url>
