@@ -13,13 +13,13 @@
 		<javaClientGenerator targetPackage="cn.aposoft.administrativedivision.db.mappers"
 			targetProject="aposoft-administrative-division-management" type="XMLMAPPER" />
 
-		<table domainObjectName="AdministrativeDivision" schema="administrative-division"
-			tableName="administrative-division">
+		<table domainObjectName="AdministrativeDivision" schema="administrative_division"
+			tableName="administrative_division">
 		</table>
-		<table domainObjectName="DivisionYearlyHistory" schema="administrative-division"
+		<table domainObjectName="DivisionYearlyHistory" schema="administrative_division"
 			tableName="division_yearly_history">
 		</table>
-				<table domainObjectName="DivisionYearlyDetail" schema="administrative-division"
+				<table domainObjectName="DivisionYearlyDetail" schema="administrative_division"
 			tableName="division_yearly_detail">
 		</table>
 	</context>
