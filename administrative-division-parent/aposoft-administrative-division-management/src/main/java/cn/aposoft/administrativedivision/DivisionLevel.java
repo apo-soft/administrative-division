@@ -4,10 +4,10 @@
 package cn.aposoft.administrativedivision;
 
 /**
- * 行政区划级别
+ * 行政区划级别[0-3] 级别顺序不能变更,与数据库的记录级别号保持一致
  * 
  * @author LiuJian
- * @version 1.0
+ * @since 1.0
  */
 public enum DivisionLevel {
 	/**
@@ -23,7 +23,7 @@ public enum DivisionLevel {
 	 */
 	City(2),
 	/**
-	 * 区,县 level=3
+	 * 区,县,县级市 level=3
 	 */
 	District(3);
 
