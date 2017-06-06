@@ -9,25 +9,25 @@ import java.util.List;
  * 行政区划查询功能
  * 
  * @author LiuJian
- *
+ * @since 1.0
  */
 public interface DivisionService {
 	/**
 	 * 
 	 * @return 行政区划列表集合
 	 */
-	List<Division> getAllDivisions();
+	List<? extends Division> getAllDivisions();
 
 	/**
 	 * 
 	 * @return 1级(省,直辖市,自治区)行政区划集合
 	 */
-	List<Division> getLevel1Divisions();
+	List<? extends Division> getLevel1Divisions();
 
 	/**
 	 * @return 行政区划列表集合
 	 */
-	List<Division> getDivisions(final String parentCode);
+	List<? extends Division> getDivisions(final String parentCode);
 
 	/**
 	 * 根据行政区划编码,获取行政区划信息
