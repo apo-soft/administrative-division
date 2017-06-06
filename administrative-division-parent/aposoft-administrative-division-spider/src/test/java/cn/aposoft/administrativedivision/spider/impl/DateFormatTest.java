@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cn.aposoft.administrativedivision.spider;
+package cn.aposoft.administrativedivision.spider.impl;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -11,6 +11,8 @@ import java.util.Date;
 import java.util.regex.Pattern;
 
 import org.junit.Test;
+
+import cn.aposoft.administrativedivision.spider.impl.DateUtil;
 
 /**
  * @author LiuJian

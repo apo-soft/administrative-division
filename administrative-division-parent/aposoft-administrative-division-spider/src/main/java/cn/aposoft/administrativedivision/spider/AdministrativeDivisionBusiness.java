@@ -6,6 +6,8 @@ package cn.aposoft.administrativedivision.spider;
 import java.io.Closeable;
 import java.util.List;
 
+import cn.aposoft.administrativedivision.spider.impl.AdministrativeDivisionListItem;
+
 /**
  * 用于发现最新报表内容
  * <p>

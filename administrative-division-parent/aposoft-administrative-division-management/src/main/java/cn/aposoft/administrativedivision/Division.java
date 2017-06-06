@@ -46,7 +46,7 @@ public interface Division {
 	 * 
 	 * @return 最晚变更年份,早于2002年按2002年记
 	 */
-	Date establishDate();
+	Date getEstablishDate();
 
 	/**
 	 * 

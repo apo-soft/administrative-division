@@ -1,7 +1,10 @@
 /**
  * 
  */
-package cn.aposoft.administrativedivision.spider;
+package cn.aposoft.administrativedivision.spider.impl;
+
+import cn.aposoft.administrativedivision.spider.AdministrativeDivisionBusinessException;
+import cn.aposoft.administrativedivision.spider.AdministrativeDivisionContent;
 
 /**
  * 内容页面解析

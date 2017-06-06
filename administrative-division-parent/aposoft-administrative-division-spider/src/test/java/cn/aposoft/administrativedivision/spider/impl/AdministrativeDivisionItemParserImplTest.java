@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cn.aposoft.administrativedivision.spider;
+package cn.aposoft.administrativedivision.spider.impl;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -14,6 +14,11 @@ import org.junit.Test;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+
+import cn.aposoft.administrativedivision.spider.AdministrativeDivisionBusinessException;
+import cn.aposoft.administrativedivision.spider.AdministrativeDivisionContent;
+import cn.aposoft.administrativedivision.spider.impl.AdministrativeDivisionItemParser;
+import cn.aposoft.administrativedivision.spider.impl.AdministrativeDivisionItemParserImpl;
 
 /**
  * @author LiuJian

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cn.aposoft.administrativedivision.spider;
+package cn.aposoft.administrativedivision.spider.impl;
 
 import java.io.Closeable;
 import java.util.List;
@@ -9,6 +9,10 @@ import java.util.List;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import cn.aposoft.administrativedivision.spider.AdministrativeDivisionBusiness;
+import cn.aposoft.administrativedivision.spider.AdministrativeDivisionBusinessException;
+import cn.aposoft.administrativedivision.spider.AdministrativeDivisionContent;
 
 /**
  * 行政区划业务逻辑实现

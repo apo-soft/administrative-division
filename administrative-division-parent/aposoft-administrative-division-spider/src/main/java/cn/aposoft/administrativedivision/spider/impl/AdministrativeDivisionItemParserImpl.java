@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cn.aposoft.administrativedivision.spider;
+package cn.aposoft.administrativedivision.spider.impl;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -17,6 +17,10 @@ import org.jsoup.nodes.Node;
 import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import cn.aposoft.administrativedivision.spider.AdministrativeDivision;
+import cn.aposoft.administrativedivision.spider.AdministrativeDivisionBusinessException;
+import cn.aposoft.administrativedivision.spider.AdministrativeDivisionContent;
 
 /**
  * @author LiuJian

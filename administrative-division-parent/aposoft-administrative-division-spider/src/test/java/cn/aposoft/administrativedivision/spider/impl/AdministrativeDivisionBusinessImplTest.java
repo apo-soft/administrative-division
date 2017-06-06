@@ -1,7 +1,7 @@
 /**
  * 
  */
-package cn.aposoft.administrativedivision.spider;
+package cn.aposoft.administrativedivision.spider.impl;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -14,6 +14,13 @@ import org.junit.Test;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializerFeature;
+
+import cn.aposoft.administrativedivision.spider.AdministrativeDivision;
+import cn.aposoft.administrativedivision.spider.AdministrativeDivisionBusiness;
+import cn.aposoft.administrativedivision.spider.AdministrativeDivisionBusinessException;
+import cn.aposoft.administrativedivision.spider.AdministrativeDivisionContent;
+import cn.aposoft.administrativedivision.spider.impl.AdministrativeDivisionBusinessImpl;
+import cn.aposoft.administrativedivision.spider.impl.AdministrativeDivisionListItem;
 
 /**
  * 行政区划业务实现类

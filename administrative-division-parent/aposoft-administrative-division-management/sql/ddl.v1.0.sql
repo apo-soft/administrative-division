@@ -16,7 +16,7 @@ CREATE TABLE `administrative_division` (
   `parent` varchar(6) DEFAULT NULL COMMENT '上级行政区划编码,1级时为空',
   `division_level` tinyint(1) DEFAULT NULL COMMENT '行政级别',
   `establish_date` date DEFAULT NULL COMMENT '创建日期',
-  `version` int(11) DEFAULT NULL COMMENT '顺序递增版本',
+  `version` int(11) DEFAULT 0 COMMENT '顺序递增版本',
   PRIMARY KEY (`id`),
   UNIQUE KEY `DIVISION_CODE_UNIQUE_IDX` (`code`),
   KEY `DIVISION_PARENT_CODE_IDX` (`parent`),

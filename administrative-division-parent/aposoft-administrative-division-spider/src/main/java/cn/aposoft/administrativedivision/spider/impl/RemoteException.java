@@ -1,7 +1,7 @@
 /**
  *   Copyright  :  www.aposoft.cn
  */
-package cn.aposoft.administrativedivision.spider;
+package cn.aposoft.administrativedivision.spider.impl;
 
 /**
  * 远程访问异常基类
