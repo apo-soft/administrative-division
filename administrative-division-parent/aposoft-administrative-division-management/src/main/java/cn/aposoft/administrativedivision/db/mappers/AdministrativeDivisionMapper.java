@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 
 import cn.aposoft.administrativedivision.db.AdministrativeDivision;
 import cn.aposoft.administrativedivision.db.AdministrativeDivisionExample;
+
 @Mapper
 public interface AdministrativeDivisionMapper {
     /**

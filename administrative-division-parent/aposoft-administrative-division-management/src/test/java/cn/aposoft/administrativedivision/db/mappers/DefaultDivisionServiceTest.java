@@ -32,7 +32,7 @@ import cn.aposoft.administrativedivision.DivisionService;
 @RunWith(value = SpringRunner.class)
 // classpath:/spring/app-config.xml
 // class-package-relative:DefaultDivisionServiceTest-context.xml
-@ContextConfiguration({ "/spring/app-config.xml", "DefaultDivisionServiceTest-context.xml" })
+@ContextConfiguration("/spring/app-config.xml")
 public class DefaultDivisionServiceTest {
 	final static Logger logger = LoggerFactory.getLogger(AdministrativeDivisionMapperTest.class);
 

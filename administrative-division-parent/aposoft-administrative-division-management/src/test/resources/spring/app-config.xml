@@ -12,15 +12,20 @@
 						http://www.springframework.org/schema/tx 
 						http://www.springframework.org/schema/tx/spring-tx.xsd
 						http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
+
 	<!-- 加载属性文件 -->
-	<context:property-placeholder location="classpath:application.properties" />
+	<context:property-placeholder location="classpath:/application.properties" />
 	<!-- 启用注解配置 -->
 	<context:annotation-config />
 	<!-- Bean 扫描基类包 -->
-	<context:component-scan base-package="${spring.bean.base.package}" />
+	<!-- <context:component-scan base-package="${spring.bean.base.package}" 
+		/> -->
+	<context:component-scan base-package="cn.aposoft.administrativedivision" />
+
 
 	<!-- 以下两种方式等价 -->
-	<mybatis:scan base-package="${mybatis.base.package}" />
+	<!-- <mybatis:scan base-package="${mybatis.base.package}" /> -->
+	<mybatis:scan base-package="cn.aposoft.administrativedivision.db.mappers" />
 
 	<!-- 启用注解事务管理 -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
@@ -43,7 +48,7 @@
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0" ref="sqlSessionFactory" />
 	</bean>
-	
+
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<property name="typeAliasesPackage" value="cn.aposoft.administrativedivision.db" />
@@ -54,7 +59,4 @@
 		<property name="mapperLocations" value="classpath*:mybatis/**/*Mapper.xml" />
 		<property name="configLocation" value="classpath:mybatis/spring-mybatis-config.xml" />
 	</bean>
-
-
-
 </beans>
