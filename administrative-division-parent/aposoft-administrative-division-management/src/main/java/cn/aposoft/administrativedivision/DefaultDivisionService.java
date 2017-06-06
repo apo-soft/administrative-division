@@ -5,6 +5,7 @@ package cn.aposoft.administrativedivision;
 
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import cn.aposoft.administrativedivision.db.AdministrativeDivision;
@@ -17,6 +18,7 @@ import cn.aposoft.administrativedivision.db.mappers.AdministrativeDivisionMapper
  * @author LiuJian
  *
  */
+@Repository
 public class DefaultDivisionService implements DivisionService {
 	// 底层数据库访问dao
 	private AdministrativeDivisionMapper mapper;
@@ -59,5 +61,4 @@ public class DefaultDivisionService implements DivisionService {
 		}
 		return null;
 	}
-
 }

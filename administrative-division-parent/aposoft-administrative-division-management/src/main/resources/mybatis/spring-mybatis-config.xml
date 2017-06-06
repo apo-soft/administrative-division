@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-	<properties resource="mybatis/application.properties" />
-	<settings>
-		<!-- default to true, enable level 1 (session level cache) -->
+	<!-- <properties resource="mybatis/application.properties" /> -->
+<!-- 	<settings>
+		default to true, enable level 1 (session level cache)
 		<setting name="cacheEnabled" value="true" />
-	</settings>
+	</settings> -->
 	<typeHandlers>
 		<!-- 用于实现枚举和行政区划级别的映射 -->
 		<typeHandler handler="org.apache.ibatis.type.EnumOrdinalTypeHandler"
 			javaType="cn.aposoft.administrativedivision.DivisionLevel" />
 	</typeHandlers>
-	<environments default="${default.environment}">
+	<!-- <environments default="${default.environment}">
 		<environment id="development">
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
@@ -21,10 +21,10 @@
 				<property name="password" value="${jdbc.password}" />
 			</dataSource>
 		</environment>
-	</environments>
-	<mappers>
+	</environments> -->
+	<!-- <mappers>
 		<mapper resource="mybatis/AdministrativeDivisionMapper.xml" />
 		<mapper resource="mybatis/DivisionYearlyDetailMapper.xml" />
 		<mapper resource="mybatis/DivisionYearlyHistoryMapper.xml" />
-	</mappers>
+	</mappers> -->
 </configuration>

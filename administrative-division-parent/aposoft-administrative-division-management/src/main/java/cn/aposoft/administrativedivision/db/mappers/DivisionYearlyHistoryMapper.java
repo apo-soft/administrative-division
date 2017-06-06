@@ -3,8 +3,10 @@ package cn.aposoft.administrativedivision.db.mappers;
 import cn.aposoft.administrativedivision.db.DivisionYearlyHistory;
 import cn.aposoft.administrativedivision.db.DivisionYearlyHistoryExample;
 import java.util.List;
-import org.apache.ibatis.annotations.Param;
 
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+@Mapper
 public interface DivisionYearlyHistoryMapper {
 
 	/**
